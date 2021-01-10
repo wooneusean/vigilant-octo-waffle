@@ -1,0 +1,251 @@
+mutation addSwagPost {
+  addPost(
+    data: {
+      title: "Hey it's me"
+      body: "I'm Swag Lord. I am the writer of this post."
+      authorId: "5ffb2c01f4cffb44586d828f"
+    }
+  ) {
+    _id
+    title
+    body
+    author {
+      _id
+      firstName
+      lastName
+      age
+      bio
+      dateRegistered
+    }
+    publishDate
+  }
+}
+
+mutation addDoePost {
+  addPost(
+    data: {
+      title: "Hey it's me"
+      body: "I'm John Doe. I am the writer of this post."
+      authorId: "5ffb2c04f4cffb44586d8290"
+    }
+  ) {
+    _id
+    title
+    body
+    author {
+      _id
+      firstName
+      lastName
+      age
+      bio
+      dateRegistered
+    }
+    publishDate
+  }
+}
+
+mutation addSmithPost {
+  addPost(
+    data: {
+      title: "Hey it's me"
+      body: "I'm John Smith. I am the writer of this post."
+      authorId: "5ffb2c07f4cffb44586d8291"
+    }
+  ) {
+    _id
+    title
+    body
+    author {
+      _id
+      firstName
+      lastName
+      age
+      bio
+      dateRegistered
+    }
+    publishDate
+  }
+}
+
+mutation addSwag {
+  addUser(
+    data: {
+      userName:"SwagLord69"
+      password:"yoloswag69"
+      firstName: "Swag"
+      lastName: "Lord"
+      age: 69
+      bio: "Ayy its me SwagLord69 lmao"
+    }
+  ) {
+    _id
+    firstName
+    lastName
+    age
+    bio
+    dateRegistered
+    posts {
+      title
+      body
+    }
+  }
+}
+
+mutation addDoe {
+  addUser(
+    data: {
+      userName: "j.doe"
+      password: "johndoe321"
+      firstName: "John"
+      lastName: "Doe"
+      age: 22
+      bio: "Hey it's me, John Doe."
+    }
+  ) {
+    _id
+    firstName
+    lastName
+    age
+    bio
+    dateRegistered
+    posts {
+      title
+      body
+    }
+  }
+}
+
+mutation addSmith {
+  addUser(
+    data: {
+      userName: "j.smith"
+      password: "johnsmith123"
+      firstName: "John"
+      lastName: "Smith"
+      age: 24
+      bio: "Hey it's me, John Smith."
+    }
+  ) {
+    _id
+    firstName
+    lastName
+    age
+    bio
+    dateRegistered
+    posts {
+      title
+      body
+    }
+  }
+}
+
+query findAllUsers {
+  users {
+    _id
+    firstName
+    lastName
+    age
+    bio
+    dateRegistered
+    posts {
+      title
+      body
+    }
+  }
+}
+
+query findAllPosts {
+  posts {
+    _id
+    title
+    body
+    author {
+      _id
+      firstName
+      lastName
+      age
+      bio
+      dateRegistered
+    }
+    publishDate
+  }
+}
+
+query findSwagLord {
+  user(userId: "5ffb2c01f4cffb44586d828f") {
+    _id
+    firstName
+    lastName
+    age
+    bio
+    dateRegistered
+    posts {
+      title
+      body
+      publishDate
+    }
+  }
+}
+
+query postsByAuthor {
+  postsByAuthor(authorName: "Swag") {
+    _id
+    title
+    body
+    # author{
+    #   _id
+    #   firstName
+    #   lastName
+    #   fullName
+    #   age
+    #   bio
+    #   dateRegistered
+    # }
+    publishDate
+  }
+}
+
+query postsByBody {
+  postsByBody(body: "the") {
+    _id
+    title
+    body
+    author {
+      firstName
+      lastName
+    }
+    publishDate
+  }
+}
+
+mutation successfulLogIn {
+  logIn(username: "j.smith", password: "johnsmith123") {
+    userName
+    firstName
+    lastName
+    fullName
+    age
+    bio
+    dateRegistered
+    posts {
+      title
+      body
+    }
+  }
+}
+
+mutation failLogIn {
+  logIn(username: "j.doe", password: "johnsmith123") {
+    userName
+    firstName
+    lastName
+    fullName
+    age
+    bio
+    dateRegistered
+    posts {
+      title
+      body
+    }
+  }
+}

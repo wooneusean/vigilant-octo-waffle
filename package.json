@@ -1,0 +1,32 @@
+{
+  "name": "mongoose-apollo-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn src/index.ts",
+    "start": "ts-node src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/mongodb": "^3.6.3",
+    "@types/node": "^8.0.29",
+    "ts-node": "3.3.0",
+    "ts-node-dev": "^1.1.1",
+    "typescript": "3.3.3333"
+  },
+  "dependencies": {
+    "apollo-server": "^2.19.1",
+    "argon2": "^0.27.1",
+    "class-validator": "^0.12.2",
+    "graphql": "^15.4.0",
+    "graphql-scalars": "^1.7.0",
+    "mongodb": "^3.0.8",
+    "mysql": "^2.14.1",
+    "reflect-metadata": "^0.1.10",
+    "type-graphql": "^1.1.1",
+    "typeorm": "0.2.29"
+  }
+}
